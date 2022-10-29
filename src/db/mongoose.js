@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://codeforall:codeforall@cluster0.thl3ihl.mongodb.net/test', {
+mongoose.connect('mongourl', {
     useNewUrlParser: true,
     // useCreateIndex: true
 })
