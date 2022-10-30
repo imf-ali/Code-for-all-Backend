@@ -1,5 +1,5 @@
-import jwt from "jsonwebtoken";
-import StatusCodes from "http-status-codes";
+const jwt = require("jsonwebtoken");
+const StatusCodes = require("http-status-codes");
 const User = require("../models/user");
 
 const auth = async (req, res, next) => {
