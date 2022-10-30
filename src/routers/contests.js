@@ -24,19 +24,6 @@ Router.get('/contest', async (req,res) => {
     }
 })
 
-Router.get('/contest/:contestid', async (req,res) => {
-    try{
-        const constestData = await Contests.findOne({ _id:  req.params.contestid})
-                                    .populate({
-                                        path : 'question'
-                                    });
-        res.status(200).send(constestData)
-    }catch(e){
-        console.log(e);
-        res.status(400).send(e)
-    }
-})
-
 Router.get('/contest/organiser/:organisername', async (req,res) => {
     try{
         const constests = await Contests.find({organiser: req.params.organisername})

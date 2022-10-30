@@ -32,4 +32,14 @@ Router.get('/questions/:questionId', async (req,res) => {
     }
 })
 
+Router.get('/questions/:contestId', async (req,res) => {
+    try{
+        const constestData = await Questions.find({ contest: req.params.contestId})
+        res.status(200).send(constestData)
+    }catch(e){
+        console.log(e);
+        res.status(400).send(e)
+    }
+})
+
 module.exports = Router
