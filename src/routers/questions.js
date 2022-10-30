@@ -36,7 +36,7 @@ Router.put("/questions/:questionId", auth, async (req, res) => {
     res.status(StatusCodes.OK).send(ques);
   } catch (e) {
     console.log(e);
-    res.status(400).send(e);
+    res.status(StatusCodes.BAD_REQUEST).send(e);
   }
 });
 
