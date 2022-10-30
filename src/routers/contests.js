@@ -1,7 +1,7 @@
 const express = require("express");
 const auth = require("../middleware/auth");
 const Contests = require("../models/contests");
-const StatusCodes = require("http-status-codes");
+const StatusCodes = require("http-status");
 
 const Router = new express.Router();
 

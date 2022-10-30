@@ -2,7 +2,7 @@ const express = require("express");
 const User = require("../models/user");
 const Router = new express.Router();
 const auth = require("../middleware/auth");
-const StatusCodes = require("http-status-codes");
+const StatusCodes = require("http-status");
 
 Router.post("/user", async (req, res) => {
   const user = new User(req.body);
