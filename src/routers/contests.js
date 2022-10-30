@@ -1,9 +1,10 @@
 const express = require('express');
+const auth = require('../middleware/auth');
 const Contests = require('../models/contests');
 
 const Router = new express.Router();
 
-Router.post('/contest', async (req, res) => {
+Router.post('/contest', auth, async (req, res) => {
     const user = new Contests(req.body)
     try{
         await user.save()
