@@ -9,6 +9,10 @@ const contestsSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    dateofcontest: {
+        type: String,
+        required: true,
+    },
     question: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Questions'
