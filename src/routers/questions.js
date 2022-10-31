@@ -6,9 +6,11 @@ const Contests = require('../models/contests');
 const Router = new express.Router()
 
 Router.post('/questions', auth, async (req,res) => {
-    const ques = new Questions(req.body);
-    const contestId  = req.body.contest;
     try{
+        if(req.body.answer)
+            req.body.solution = true;
+        const ques = new Questions(req.body);
+        const contestId  = req.body.contest;
         const savedQues = await ques.save();
         await Contests.findByIdAndUpdate(contestId,{ 
             $push: { question: savedQues._id } 
