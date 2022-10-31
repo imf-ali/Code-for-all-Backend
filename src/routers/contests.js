@@ -27,10 +27,11 @@ Router.get("/contest", async (req, res) => {
 
 Router.get("/contest/organiser/:organisername", async (req, res) => {
   try {
-    const constests = await Contests.find({
+    const contest = await Contests.find({
       organiser: req.params.organisername,
     }).sort({ createdAt: -1 });
-    res.status(StatusCodes.OK).send(constests);
+    console.log(contest)
+    res.status(StatusCodes.OK).send({ contest });
   } catch (e) {
     console.log(e);
     res.status(StatusCodes.BAD_REQUEST).send(e);

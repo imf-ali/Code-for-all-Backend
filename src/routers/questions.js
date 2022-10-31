@@ -71,7 +71,7 @@ Router.get("/questions/:questionId", async (req, res) => {
 Router.get("/questions/contest/:contestId", async (req, res) => {
   try {
     const contestData = await Questions.find({ contest: req.params.contestId });
-    res.status(StatusCodes.OK).send(contestData);
+    res.status(StatusCodes.OK).send({contestData});
   } catch (e) {
     console.log(e);
     res.status(StatusCodes.BAD_REQUEST).send(e);
