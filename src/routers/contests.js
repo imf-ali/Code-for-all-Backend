@@ -15,28 +15,15 @@ Router.post("/contest", auth, async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-Router.get('/contest', async (req,res) => {
-    try{
-        const constests = await Contests.find()
-                                .sort({ dateofcontest: -1})
-        res.status(200).send(constests)
-    }catch(e){
-        console.log(e);
-        res.status(400).send(e)
-    }
-})
-=======
 Router.get("/contest", async (req, res) => {
   try {
-    const constests = await Contests.find().sort({ createdAt: -1 });
+    const constests = await Contests.find().sort({ dateofcontest: -1 });
     res.status(StatusCodes.OK).send(constests);
   } catch (e) {
     console.log(e);
     res.status(StatusCodes.BAD_REQUEST).send(e);
   }
 });
->>>>>>> master
 
 Router.get("/contest/organiser/:organisername", async (req, res) => {
   try {
