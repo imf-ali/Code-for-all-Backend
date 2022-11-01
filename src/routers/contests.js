@@ -17,8 +17,8 @@ Router.post("/contest", auth, async (req, res) => {
 
 Router.get("/contest", async (req, res) => {
   try {
-    const constests = await Contests.find().sort({ dateofcontest: -1 });
-    res.status(StatusCodes.OK).send(constests);
+    const contests = await Contests.find().sort({ dateofcontest: -1 });
+    res.status(StatusCodes.OK).send({contests});
   } catch (e) {
     console.log(e);
     res.status(StatusCodes.BAD_REQUEST).send(e);

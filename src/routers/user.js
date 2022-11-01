@@ -42,4 +42,14 @@ Router.post("/user/logout", auth, async (req, res) => {
   }
 });
 
+Router.post('/user/logout/all', auth, async (req,res) => {
+  try {
+    req.user.tokens = [];
+    await req.user.save();
+    res.send();
+  } catch (e) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).send();
+  }
+})
+
 module.exports = Router;

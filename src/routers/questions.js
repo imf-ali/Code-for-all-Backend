@@ -8,6 +8,7 @@ const Router = new express.Router();
 
 Router.post("/questions", auth, async (req, res) => {
   try {
+    console.log('Here hun mai');
     if(req.body.answer)
         req.body.solution = true;
     const ques = new Questions(req.body);
