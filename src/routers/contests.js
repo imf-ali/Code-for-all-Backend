@@ -30,7 +30,6 @@ Router.get("/contest/organiser/:organisername", async (req, res) => {
     const contest = await Contests.find({
       organiser: req.params.organisername,
     }).sort({ createdAt: -1 });
-    console.log(contest)
     res.status(StatusCodes.OK).send({ contest });
   } catch (e) {
     console.log(e);
