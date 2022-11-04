@@ -5,6 +5,10 @@ pipeline {
   }
   environment {
     HEROKU_API_KEY = credentials('heroku-api-key')
+    MONGO_URL = credentials('MONGO_URL')
+    YOUR_KEY_ID = credentials('YOUR_KEY_ID')
+    YOUR_KEY_SECRET = credentials('YOUR_KEY_SECRET')
+    RAZORPAYMERCHANTID = credentials('RAZORPAYMERCHANTID')
     IMAGE_NAME = 'code-for-all/backend'
     IMAGE_TAG = 'latest'
     APP_NAME = 'code-for-all-backend'
