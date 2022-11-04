@@ -7,7 +7,7 @@ pipeline {
     HEROKU_API_KEY = credentials('heroku-api-key')
     IMAGE_NAME = 'code-for-all/backend'
     IMAGE_TAG = 'latest'
-    APP_NAME = 'code-for-all'
+    APP_NAME = 'code-for-all-backend'
   }
   stages {
     stage('Build') {
