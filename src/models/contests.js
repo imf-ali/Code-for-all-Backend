@@ -9,12 +9,8 @@ const contestsSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    ongoing:{
-        type: Boolean,
-        required: true,
-    },
     dateofcontest: {
-        type: String,
+        type: Date,
         required: true,
     },
     question: [{
